@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 import io.appium.java_client.SwipeElementDirection;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
+import io.appium.java_client.remote.MobilePlatform;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
@@ -30,8 +31,7 @@ import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 
 import com.PULSE.prem.PULSE;
 import com.thoughtworks.selenium.Wait;
-import com.thoughtworks.selenium.webdriven.commands.Click;
-import com.thoughtworks.selenium.webdriven.commands.Submit;
+
 
 
 public class Pulse_Acuity {
@@ -44,10 +44,25 @@ public static void main(String args[]) throws Exception {
 
 
 	System.out.println("Caps starts here");
+	
+	File appdir=new File("C:\\Users\\Prem\\git\\AcuityConnect\\PULSE\\apk");
+	File app=new File(appdir, "Acuity Connect Dev.apk");
+	
 	  DesiredCapabilities caps = new DesiredCapabilities();
 	  System.out.println("Caps object created");
+	  
+	  caps.setCapability(MobileCapabilityType.BROWSER_NAME, "");
+	  System.out.println("BROWSER_NAME- ");
+	  caps.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
+	  System.out.println("DEVICE_NAME- AndroidEmulator");
+	  caps.setCapability(MobileCapabilityType.PLATFORM_NAME , "MobilePlatform.ANDROID");
+	  System.out.println("PLATFORM_NAME , MobilePlatform.ANDROID");
+	  caps.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
+	
+	/*  DesiredCapabilities caps = new DesiredCapabilities();
+	  System.out.println("Caps object created");
 	  caps.setCapability("platformName", "Android");
-	  System.out.println("platformName- Android");
+	  System.out.println("platformName- Android");*/
 	  /*caps.setCapability("deviceName","ZX1D6466VH" );
 	  System.out.println("deviceName- Moto G2");
 	  caps.setCapability("platformVersion", "6.0");
@@ -58,10 +73,10 @@ public static void main(String args[]) throws Exception {
 	  caps.setCapability("platformVersion", "6.0.1");
 	  System.out.println("platformVersion- 6.0.1");*/ 
 	  
-	  caps.setCapability("deviceName","ZX1D6466VH" );
+/*	  caps.setCapability("deviceName","ZX1D6466VH" );
 	  System.out.println("deviceName- Samsung Moto");
 	  caps.setCapability("platformVersion", "6.0");
-	  System.out.println("platformVersion- 6.0");
+	  System.out.println("platformVersion- 6.0");*/
 	  
 	  caps.setCapability("appPackage", "com.compassusa.acuityconnectenterprise");
 	  System.out.println("appPackage- com.compassusa.acuityconnectenterprise");
@@ -201,7 +216,7 @@ public static void Wizard() throws InterruptedException, IOException, FindFailed
 	  Pulse_Acuity.scrnshot();
 	  System.out.println("-----------------------------------");
 	  
-	  ((AndroidDriver<WebElement>)driver).scrollToExact("Mike Steinfeld *");
+	  ((AndroidDriver)driver).scrollToExact("Mike Steinfeld *");
 	  Thread.sleep(8000);
 	  Pulse_Acuity.scrnshot();
 	  System.out.println("-----------------------------------");
@@ -238,7 +253,7 @@ public static void Dashboard() throws InterruptedException, IOException
 	 Thread.sleep(2000);
 	  System.out.println("Landed on Dashboard");
       
-	  ((AndroidDriver<WebElement>)driver).scrollToExact("In-Progress Form");
+	  ((AndroidDriver)driver).scrollToExact("In-Progress Form");
 	  //((AndroidDriver<WebElement>)driver).scrollToExact("LOCATIONS");
 	  Thread.sleep(2000);
 	  Pulse_Acuity.scrnshot();
@@ -330,7 +345,7 @@ Thread.sleep(30000);*/
 driver.findElement(By.xpath("//android.view.View[@content-desc=' Back']")).click();
 Thread.sleep(2000);
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Mike Steinfeld *");
+((AndroidDriver)driver).scrollToExact("Mike Steinfeld *");
 Thread.sleep(2000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -487,7 +502,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+((AndroidDriver)driver).scrollToExact("Save ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -502,7 +517,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+((AndroidDriver)driver).scrollToExact("Save ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -514,7 +529,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+((AndroidDriver)driver).scrollToExact("Save ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -540,7 +555,7 @@ System.out.println("-----------------------------------");
 
 //driver.findElement(By.xpath("//android.widget.Button[@content-desc='Next ']")).click();
 //Pattern N2= new Pattern("C:\\Users\\prem.gupta\\Automation_Project\\PULSE\\Pulse Images\\N2.png");
-((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+((AndroidDriver)driver).scrollToExact("Save ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -629,7 +644,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Next ");
+((AndroidDriver)driver).scrollToExact("Next ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -672,7 +687,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Next ");
+((AndroidDriver)driver).scrollToExact("Next ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -752,7 +767,7 @@ Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
 
 
-((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+((AndroidDriver)driver).scrollToExact("Save ");
 Thread.sleep(4000);
 Pulse_Acuity.scrnshot();
 System.out.println("-----------------------------------");
@@ -866,7 +881,7 @@ public static void Assignmnets() throws InterruptedException, IOException, FindF
 	System.out.println("-----------------------------------");
 	
 	
-	((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+	((AndroidDriver)driver).scrollToExact("Save ");
 	Thread.sleep(8000);
 	Pulse_Acuity.scrnshot();
 	System.out.println("-----------------------------------");
@@ -909,7 +924,7 @@ public static void Assignmnets() throws InterruptedException, IOException, FindF
 	System.out.println("-----------------------------------");
 	
 	
-	((AndroidDriver<WebElement>)driver).scrollToExact("Save ");
+	((AndroidDriver)driver).scrollToExact("Save ");
 	Thread.sleep(4000);
 	Pulse_Acuity.scrnshot();
 	System.out.println("-----------------------------------");
@@ -1375,7 +1390,7 @@ public static void RoleChange() throws InterruptedException, IOException, FindFa
 	Pulse_Acuity.scrnshot();
 	System.out.println("-----------------------------------");
 	
-	((AndroidDriver<WebElement>)driver).scrollToExact("Logout");
+	((AndroidDriver)driver).scrollToExact("Logout");
 	Thread.sleep(4000);
 	Pattern N22= new Pattern("C:\\Users\\prem.gupta\\Automation_Project\\PULSE\\Pulse Images\\N22.png");
 	scrn.click(N22);
